@@ -79,7 +79,7 @@ print(f'my name is {a}')
 # 我们可以在脚本最后加入=，那么脚本的执行结果中会带着脚本的原始内容
 # 输出内容：a+b='helloworld' is a function string result
 print(f'{a+b=} is a function string result')
-# my name is word[-5:-2]='eig'
+# 输出内容：my name is word[-5:-2]='eig'
 print(f'my name is {word[-5:-2]=}')
 # 注意：f-string与格式化字符串的区别是
 # f-string是变量定义完就开始执行脚本了，因此变量中获取到的是脚本的执行结果。
