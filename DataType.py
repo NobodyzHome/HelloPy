@@ -57,19 +57,34 @@ else:
 # 6.数据类型转换
 # 两个可以兼容的类型的变量进行计算，会进行隐式转换
 # 下面a1是int类型，a2是bool类型，而bool是int的子类，所以这两个变量可以相加
-a1,a2=15,True
+a1, a2 = 15, True
 # 输出内容：a1+a2=16
 print(f'{a1+a2=}')
 
 # 下面a3是int类型，a4是string类型，无法兼容因此执行会报错
 # TypeError: unsupported operand type(s) for +: 'int' and 'str'
-a3,a4=15,'5'
+a3, a4 = 15, '5'
 # print(f'{a3+a4=}')
 # 我们可以通过强制类型转换，使计算能够执行
 # 输出内容：a3+int(a4)=20
 print(f'{a3+int(a4)=}')
 
-a5,a6,a7=20,[],10.2
-a8,a9,a10=bool(a5),bool(a6),int(a7)
+a5, a6, a7 = 20, [], 10.2
+a8, a9, a10 = bool(a5), bool(a6), int(a7)
 # 输出内容：a8=True,a9=False,a10=10
-print('a8=%s,a9=%s,a10=%s'% (a8,a9,a10))
+print('a8=%s,a9=%s,a10=%s' % (a8, a9, a10))
+
+# 7.python中有以下基本数据类型
+# str、number、bool、list、tuple、dict、set
+# 其中不可变的数据类型有：str、number、bool、tuple
+# 可变的数据类型有：list、dict、set
+
+# 8.python中集合类型的使用总结
+#                            list                                           tuple                                               dict                                                set
+# 数据结构              有序、可修改列表                                有序、不可修改列表                                    key-value结构                                  无序、不重复的数据集合
+# 定义方式              l1=[e1,e2,e3]                                t1=(e1,e2,e3)、t1=e1,e2,e3                          d1={key1:value1,key2:value2}                  s1={e1,e2,e3}、s1=set((e1,e2,e3))
+# 访问元素              list[index]、list[start:end]                 tuple[index]、tuple[start:end]                      dict[key]、dict.get(key)                       不支持随机访问，只能用for循环进行遍历
+# 增加元素              list.append(e)                                   不支持                                          dict[newKey]=value                             set.add(e)、set.update(e)
+# 删除元素              del list[index]                                  不支持                                          del dict[key]                                  set.remove(e)、set.discard(e)、set.pop()
+# 更新元素              list[index]=e                                    不支持                                          dict[key]=value                                不支持随机修改某一元素
+# 存储数据要求       list中数据可以是任意类型的，且可以是不同类型的       tuple中数据可以是任意类型的，且可以是不同类型的              key必须是不可变类型的数据，value无要求              set中的数据必须是不可变类型的
