@@ -45,6 +45,7 @@ print(f'{int(False)=}')
 # 输出内容：1>0=True
 print(f'{1>0=}')
 # 5.5 在py中可以使用多种类型表示True和False
+# 在 Python 中，所有非零的数字和非空的字符串、列表、元组等数据类型都被视为 True，只有 0、空字符串、空列表、空元组等被视为 False。因此，在进行布尔类型转换时，需要注意数据类型的真假性。
 # string类型：''代表False，其余代表True
 # int类型：0代表False，其余代表True
 # 数组：空数组[]代表False，其余代表True
