@@ -102,7 +102,8 @@ try:
         a = '5' + 1
     except TypeError as e:
         print('发生了TypeError异常，即将把该异常再次往上抛', e)
-        # 当我们在except中捕获到了异常，我们可以只用raise，直接将捕获到的异常往上抛
+        # 当我们在except中捕获到了异常，我们可以只用raise，直接将捕获到的异常往上抛。
+        # 这种情况适用于不处理异常，但是要在发生异常时进行日志记录。
         raise
 except:
     print('收到了里层抛出的异常')
