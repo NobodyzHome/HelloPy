@@ -36,11 +36,13 @@ def fun_multi_param1(must_param1, *multi_param):
     return must_param1 * sum(multi_param)
 
 # 在下面调用中，10是通过位置形式赋值给must_param1，其余参数都是复制给multi_param，以tuple形式存储
+# 输出内容：type(multi_param)=<class 'tuple'>
 fun_multi_param1_rst1 = fun_multi_param1(10, 2, 3, 5, 11, 27,20)
-# 输出内容fun_multi_param1_rst1=680
+# 输出内容：fun_multi_param1_rst1=680
 print(f'{fun_multi_param1_rst1=}')
 
 # 也可以不给可变长参数传入任何入参，这样multi_param被赋值的就是一个空tuple
+# 输出内容：type(multi_param)=<class 'tuple'>
 fun_multi_param1_rst2 = fun_multi_param1(50)
 # 输出内容：fun_multi_param1_rst2=0（因为是个空tuple，所以sum(multi_param)=0，得到的结果自然也是0）
 print(f'{fun_multi_param1_rst2=}')
@@ -62,12 +64,14 @@ def fun_multi_dict_param(must_param1, default_param1=20, default_param2=30, **mu
 # 1.使用位置形式给must_param1、default_param1参数赋值的。
 # 2.default_param2没有赋值，因此走默认值。
 # 3.通过关键字形式，给dict形式的可变长字段multi_dict_param赋值。字段名是dict的key（在这里是start、end），字段值是dict的value（在这里是19、51）。
+# 输出内容：<class 'dict'>
 fun_multi_dict_param_rst1 = fun_multi_dict_param(15, 22, start=19, end=51)
 # 输出内容：fun_multi_dict_param_rst1=99
 print(f'{fun_multi_dict_param_rst1=}')
 
 # 也可以不给multi_dict_param传入任何入参
 # 但注意的是：函数定义时，获取dict的值应使用get的方式并给出默认值，而不是dict[key]的方式。避免获取不到dict的key而导致程序报错。
+# 输出内容：<class 'dict'>
 fun_multi_dict_param_rst2 = fun_multi_dict_param(20, 50)
 # 输出内容：fun_multi_dict_param_rst2=100
 print(f'{fun_multi_dict_param_rst2=}')
