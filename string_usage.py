@@ -92,3 +92,14 @@ s8 = f'this is a format string,value is %s'
 print(s8)
 # 通过%后，才会执行格式化字符串中变量的替换，形成新的字符串。输出内容：this is a format string,value is hellohellohello
 print(s8 % (s1 * 3))
+
+# 案例：将一个list中的数据拼接成一个字符串，以指定字符分割
+# 例如：[2,3,hllo,world,6]，分隔符为#，拼接成的字符串"2#3#hllo#world#6"
+# 实现：可以利用string的join函数
+data=[2,3,'hello','world',6]
+split='#'
+# 注意：join的list中必须都是string类型，否则会报错：TypeError: sequence item 0: expected str instance, int found。
+# 因此需要使用推导式改变一下list中的数据
+joinResult=split.join([str(x) for x in data])
+# 输出内容：joinResult='2#3#hello#world#6'
+print(f'{joinResult=}')
